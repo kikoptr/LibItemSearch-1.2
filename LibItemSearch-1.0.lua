@@ -17,7 +17,7 @@
 		<op>				:=  : | = | == | != | ~= | < | > | <= | >=
 --]]
 
-local Lib = LibStub:NewLibrary('LibItemSearch-1.0', 7)
+local Lib = LibStub:NewLibrary('LibItemSearch-1.0', 8)
 if not Lib then
   return
 else
