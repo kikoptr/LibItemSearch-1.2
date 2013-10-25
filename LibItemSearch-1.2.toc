@@ -1,4 +1,4 @@
-## Interface: 50300
+## Interface: 50400
 ## Title: LibItemSearch
 ## Notes: An item search library
 ## OptionalDeps: LibStub, CustomSearch-1.0, ItemRack, Wardrobe
