@@ -4,7 +4,7 @@
 --]]
 
 local Search = LibStub('CustomSearch-1.0')
-local Lib = LibStub:NewLibrary('LibItemSearch-1.2', 4)
+local Lib = LibStub:NewLibrary('LibItemSearch-1.2', 5)
 if Lib then
 	Lib.Filters = {}
 else
@@ -120,9 +120,13 @@ Lib.Filters.bind = {
 		scanner:SetOwner(UIParent, 'ANCHOR_NONE')
 		scanner:SetHyperlink(link)
 
-		local numLines = scanner:NumLines()
-		local matches = numLines > 1 and Search:Find(search, line2:GetText()) or
-						numLines > 2 and Search:Find(search, line3:GetText())
+		local matches = false
+		for i = 1, scanner:NumLines() do
+			if search == _G['LibItemSearchTooltipScannerTextLeft' .. i]:GetText() then
+				matches = true
+				break
+			end
+		end
 
 		self.cache[search][id] = matches
 		return matches
