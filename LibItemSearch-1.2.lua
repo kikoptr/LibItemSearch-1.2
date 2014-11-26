@@ -4,7 +4,7 @@
 --]]
 
 local Search = LibStub('CustomSearch-1.0')
-local Lib = LibStub:NewLibrary('LibItemSearch-1.2', 6)
+local Lib = LibStub:NewLibrary('LibItemSearch-1.2', 7)
 if Lib then
 	Lib.Filters = {}
 else
@@ -162,14 +162,15 @@ Lib.Filters.tipPhrases = {
 
 	cache = setmetatable({}, {__index = function(t, k) local v = {} t[k] = v return v end}),
 	keywords = {
-    	['soulbound'] = ITEM_BIND_ON_PICKUP,
+    	[ITEM_SOULBOUND:lower()] = ITEM_BIND_ON_PICKUP,
     	['bound'] = ITEM_BIND_ON_PICKUP,
 		['boe'] = ITEM_BIND_ON_EQUIP,
 		['bop'] = ITEM_BIND_ON_PICKUP,
 		['bou'] = ITEM_BIND_ON_USE,
 		['quest'] = ITEM_BIND_QUEST,
 		['boa'] = ITEM_BIND_TO_BNETACCOUNT,
-		['reagent'] = PROFESSIONS_USED_IN_COOKING
+		['reagent'] = PROFESSIONS_USED_IN_COOKING,
+		[TOY:lower()] = TOY
 	}
 }
 
