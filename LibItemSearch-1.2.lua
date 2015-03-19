@@ -106,7 +106,7 @@ Lib.Filters.quality = {
 
 	canSearch = function(self, _, search)
 		for i, name in pairs(qualities) do
-		  if name:find(search) then
+		  if Search:Clean(name):find(search) then
 			return i
 		  end
 		end
@@ -121,7 +121,7 @@ Lib.Filters.quality = {
 
 --[[ Usable ]]--
 
-Lib.Filters.quality = {
+Lib.Filters.usable = {
 	tags = {},
 
 	canSearch = function(self, operator, search)
